@@ -2,7 +2,6 @@ import codecs
 
 
 def q0(i, s):
-    # print(s[i], "q0")
     # Verificar mayuscula al principio
     if s[i].isupper():
         return "q1", i+1
@@ -11,7 +10,6 @@ def q0(i, s):
 
 
 def q1(i, s):
-    # print(s[i], "q1")
     # Verificar primera minuscula del apellido
     if s[i].islower():
         return "q2", i+1
@@ -20,7 +18,6 @@ def q1(i, s):
 
 
 def q2(i, s):
-    # print(s[i], "q2")
     # Verificar el resto de las minusculas o pasar a segundo apellido o pasar a fecha
     if s[i].islower():
         return "q2", i+1
@@ -36,7 +33,6 @@ def q2(i, s):
 
 
 def q3(i, s):
-    # print(s[i], "q3")
     # Verificar mas mayusculas
     if s[i].isupper():
         return "q3", i+1
@@ -44,11 +40,10 @@ def q3(i, s):
     elif s[i].isdigit():
         return "q4", i+1
 
-    return
+    return "qe", i
 
 
 def q4(i, s):
-    # print(s[i], "q4")
     # Verificar el año de nacimiento
     count = 0
     while count < 3:
@@ -63,7 +58,7 @@ def q4(i, s):
 
 
 def q5(i, s):
-    # print(s[i], "q5")
+    # Verificar terminacion
     mail = "iingen.unam.mx"
     for j in range(len(mail)):
         if i + j > len(s):
